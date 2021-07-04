@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&family=Tomorrow&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: black;
+  color: white;
+
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: Tomorrow, 'Times New Roman', Times, serif;
+}
+
+p, code, span, a{
+  font-family: 'Encode Sans SC', sans-serif;
+}
+
+.title{
+  font-size: 3em;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  #links a{
+    display: block !important;
+    margin: 10px
+  }
+}
+
+#links a{
+  color: white;
+
+  border: 1px solid white;
+  border-radius: 10px 10px;
+
+  text-decoration: none;
+  padding: 5px 50px;
+  
+  transition: 0.5s;
+}
+
+#links a:hover{
+  background-color: white;
+  color: black;
+  /* transform: scale(1.1); */
+}
+
+
+
+#projects{
+  text-align: left;
+}
+
+#projects #projects-list{
+  margin: 0;
+  padding: 0;
+  /* text-align: center; */
+
+  list-style-type: none;
+}
+
+#projects #projects-list .project a{
+  text-decoration: none;
+  color: white;
+
+  font-size: 2em;
+  /* border: 1px solid white; */
+  /* border-radius: 10px 10px; */
+  /* padding: 5px 50px; */
+  
+}
+
+#projects #projects-list .project{
+  /* text-decoration: none;
+  color: white; */
+
+  border: 1px solid white;
+  border-radius: 10px 10px;
+  padding: 5px 50px;
+
+  cursor: pointer;
+
+  overflow: auto;
+  
+}
+
+#projects #projects-list .project a:hover{
+  /* background-color: white; */
+  /* color: black; */
+
+  text-decoration: underline white;
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+  #projects{
+    margin-left: 50px;
+
+    /* background-color: red; */
+  }
+  
+  #projects #projects-list{
+    display: grid;
+
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 3%;
+    grid-row-gap: 50px;
+  }
+
+  #projects #projects-list .project{
+    display: inline-block;
+
+    width: 350px;
+    height: 150px;
+    padding: 25px 25px;
+  }
+
+  /* #projects #projects-list .project .description{
+    width: 250px;
+    height: 230px;
+  } */
+
+  /* #projects #projects-list .project *{
+    display: inline-block;
+  } */
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  #projects{
+    text-align: center;
+    /* background: blue; */
+  }
+  
+  #projects #projects-list .project{
+    margin-top: 5px;
+  }
+
+  #projects #projects-list .project a{
+    display: block;
+
+    font-size: 20px;
+  }
+
+  #projects #projects-list .project a:hover{
+    color: black;
+  }
+
+  #projects #projects-list .project:hover{
+    background-color: white;
+
+    color: black;
+  }
+
+  #projects #projects-list .project .description{
+    display: none;
+  }
+}
+
+.section-title{
+  text-decoration: underline;
+}

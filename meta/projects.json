@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Giveaways Discord Bot",
+    "description": "Giveaway Drops is an advanced discord bot made for hosting giveaways on Discord, you can use many features including setting a custom requirement to enter the giveaway and more!",
+    "url": "https://github.com/hackermondev/GiveawayDrops"
+  },
+  {
+    "name": "Cosmic",
+    "description": "Cosmic is a web scraper written in Golang, it was my first public program written in Golang. I made it open source so people can check it out but the code is very bad.",
+    "url": "https://github.com/hackermondev/Cosmic"
+  },
+  {
+    "name": "Free .is-a.dev domains",
+    "description": "I don't own this but I am a maintainer for this repo. We allow developers to get a custom name.is-a.dev domain with their name on it.",
+    "url": "https://github.com/is-a-dev/register"
+  }
+]
