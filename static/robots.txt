@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://daniel.is-a.dev/blog/sitemap.xml

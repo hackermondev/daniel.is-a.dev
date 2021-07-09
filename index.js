@@ -9,12 +9,17 @@ const cookieParser = require('cookie-parser')
 const compression = require('compression')
 const minify = require('./middleware/minify')
 
+const helmet = require("helmet")
+const bodyParser = require('body-parser')
+const limit = require('express-limit').limit
+
 let meta = {
   links: require('./meta/links.json'),
   projects: require('./meta/projects.json'),
   analytics: require('./meta/analytics.json'),
   isProduction: process.env['NODE_ENV'] == 'production',
-  meta: require('./meta/meta.json')
+  meta: require('./meta/meta.json'),
+  blogs: []
 }
 
 const logger = winston.createLogger({
@@ -30,38 +35,52 @@ const logger = winston.createLogger({
   ],
 })
 
-const api = require('./routes/api')
+const blogApi = require('./routes/blog')
 
 let app = express()
 
+// Security & Improvment Middleware
+
 app.use(compression())
-app.use(minify)
+
+app.use(helmet({
+  contentSecurityPolicy: false
+}))
+
+// app.use(limit({
+//   max: 100,
+//   period: 60 * 1000
+// }))
+
+
+// Logging Middleware
+
+app.use('/static', express.static('static'))
 
 app.use((req, res, next) => {
   // logging
   logger.log(`info`, `${req.method} ${req.path} (${req.headers['user-agent']}) ${res.getHeader('content-type')}`)
 
   // Enabling CORS
-
   res.header("x-hackermon", "yes")
-
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x - client - key, x - client - token, x - client - secret, Authorization")
 
   next()
 })
 
-app.use('/static', express.static('static'))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(cookieParser())
+// Parsers
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser(process.env.COOKIE_SECRET))
 
-app.use('/api', api)
+// Routes 
 
-app.get('/', (req, res) => {
+app.use('/blog', blogApi)
+
+app.get('/', async (req, res) => {
   // copy json
   var metaForPage = JSON.parse(JSON.stringify(meta))
 
@@ -72,12 +91,52 @@ app.get('/', (req, res) => {
   } else {
     metaForPage['renderAnalytics'] = false
   }
+  
+  if(req.header('dnt') == 1){
+    metaForPage['renderAnalytics'] = false
+  }
+
+  try{
+    var showHiddenBlogs = false
+
+    if(req.signedCookies['sid']){
+      showHiddenBlogs = true
+    }
+    
+    var websiteBlogs = null
+
+    if(showHiddenBlogs == false){
+      websiteBlogs = await blogApi.fetchBlogs({
+        hidden: false
+      })
+    } else {
+      websiteBlogs = await blogApi.fetchBlogs()
+    }
+
+    metaForPage['blogs'] = websiteBlogs
+  } catch (err) {
+    logger.log(`error`, `Could not fetch blogs: `, err)
+    
+    metaForPage['blogs'] = []
+  }
+  
+  if(meta.isProduction == true){
+    metaForPage['cache'] = true
+  }
 
   res.render(`home`, metaForPage)
 })
 
 app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(__dirname, `static/robots.txt`))
+})
+
+app.get('/github', (req, res)=>{
+  res.redirect(`https://github.com/hackermondev`)
+})
+
+app.get('/twitter', (req, res)=>{
+  res.redirect(`https://twitter.com/hackermondev`)
 })
 
 app.get('/analytics', (req, res) => {

@@ -23,6 +23,9 @@ module.exports = async (req, res, next) => {
     res.end(minified)
   }
   catch(err){
-    next(err)
+    console.error(err)
+
+    // return unminified version if it doesnt work
+    res.end(fs.readFileSync(name))
   }
 }

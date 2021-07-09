@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tiny.cloud/1/90fk847wcg63wjvkfnrbrjeoqiyoztrx48xwunmncrk47196/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <title>New Blog</title>
+
+    <link href="/static/images/hackermon.png" rel="icon" type="image/png">
+    
+    <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/static/style/blog.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="little-left-margin">
+    <!-- add some space to the top e-->
+
+    <h1 class="title">
+    HackermonDev
+    
+    <% if(isEditing == true) { %>
+      (Editing blog <%= data.old_blog_id %>)
+    <% } %>
+    </h1>
+
+    <form method="POST" id="form" action="/blog/preview">
+      <input type="hidden" name="old_blog_id" value="<%= data.old_blog_id %>">
+
+      <input type="text" placeholder="Title" name="blog_title" style="width: 390px" value="<%= data.title %>"><br>
+
+      <select style="width: 430px;" name="blog_privacy" required>
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+        <option value="unlisted">Unlisted</option>
+      </select>
+
+      <br>
+      <textarea id="blog_text" name="blog_data" style="width: 1050px; height: 350px;" placeholder="Content"><%- data.markdown %></textarea>
+      <br>
+      
+      <input type="button" class="fancy" onclick="preview()" value="Preview!"/>
+      <br>
+
+      <input type="button" onclick="create()" class="fancy" value="Save!">
+    </form>
+
+    <%if (renderAnalytics == true) { %>
+      <script src="/scripts/science.js"></script>
+
+      <script>
+        window.tracker = ackeeTracker.create(`https://<%= analytics.AckeeHost %>`, {
+          ignoreLocalhost: true,
+          detailed: true,
+          ignoreOwnVisits: false
+        })
+
+        window.tracker.record('<%= analytics.AckeeID %>')
+      </script>
+    <% } %>
+    
+    <script>
+      var form = document.getElementById('form')
+
+      function create(){
+        form.action = '/blog/submit'
+
+        form.submit()
+      }
+
+      function preview(){
+        form.action = '/blog/preview'
+
+        form.submit()
+      }
+    </script>
+  </body>
+</html>

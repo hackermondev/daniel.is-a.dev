@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tiny.cloud/1/90fk847wcg63wjvkfnrbrjeoqiyoztrx48xwunmncrk47196/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <meta name="title" content="<%= blog.title %>">
+    <meta name="description" content="<%= blog.teaser %>">
+    <meta name="author" content="HackermonDev">
+
+    <meta name="og:title" content="<%= blog.title %>">
+    <meta name="og:description" content="<%= blog.teaser %>">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= blog.title %>">
+    <meta name="twitter:description" content="<%= blog.teaser %>">
+
+    <meta property="twitter:image" content="https://daniel.is-a.dev/static/images/hackermon.png"/>
+
+    <meta name="og:icon" content="/static/images/hackermon.png">
+    
+    <meta property="og:image" content="/static/images/hackermon.png"/>
+    <meta name="og:site_name" content="HackermonDev">
+
+    <meta name="author" content="HackermonDev">
+
+    <title>HackermonDev - <%= blog.title %></title>
+
+    <link href="/static/images/hackermon.png" rel="icon" type="image/png">
+    
+    <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/static/style/blog.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      a:hover{
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body class="little-left-margin">
+    <br>
+    <a class="normal-link" href="<%= previousLink %>">← Back</a>
+
+    <h1 class="title" style="margin-bottom: 0;"><%= blog.title %></h1>
+    <i class="small"><%= blog.createdAt %> (<%= blog.viewCount %> views)</i>
+
+    <div id="content">
+      <%- blog.html_content %>
+    </div>
+
+    <%if (renderAnalytics == true) { %>
+      <script src="/scripts/science.js"></script>
+
+      <script>
+        window.tracker = ackeeTracker.create(`https://<%= analytics.AckeeHost %>`, {
+          ignoreLocalhost: true,
+          detailed: true,
+          ignoreOwnVisits: false
+        })
+
+        window.tracker.record('<%= analytics.AckeeID %>')
+      </script>
+    <% } %> 
+
+    <%if (isPreviewMode == true) { %>
+      <script>
+        window.replaceState({}, `/blog/<%= blog.slug %>`)
+      </script>
+    <% } %>
+  </body>
+</html>

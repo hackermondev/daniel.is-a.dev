@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Login to Blog</title>
+
+    <link href="/static/images/hackermon.png" rel="icon" type="image/png">
+    
+    <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/static/style/blog.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="center">
+    <!-- add some space to the top e-->
+    <br>
+
+    <h1 class="title">HackermonDev</h1>
+
+    <form method="POST" action="/blog/login">
+      <input type="text" placeholder="Username" name="blog_username" style="width: 290px"><br>
+      <input type="password" placeholder="Password" name="blog_password" style="width: 290px"><br>
+        
+      <br>
+      <span id="message">
+        <%if (message == '') { %>
+          Please login to continue
+        <% } else { %>
+          <%= message %>
+        <% } %>
+      </span>
+
+      <br><br>
+
+      <input type="submit" value="Login">
+
+    </form>
+
+    <%if (renderAnalytics == true) { %>
+      <script src="/scripts/science.js"></script>
+
+      <script>
+        window.tracker = ackeeTracker.create(`https://<%= analytics.AckeeHost %>`, {
+          ignoreLocalhost: true,
+          detailed: true,
+          ignoreOwnVisits: false
+        })
+
+        window.tracker.record('<%= analytics.AckeeID %>')
+      </script>
+    <% } %>
+    
+  </body>
+</html>

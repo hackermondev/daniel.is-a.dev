@@ -1,0 +1,42 @@
+/* Blog Login */
+
+input, select, textarea {
+  padding: 10px 20px;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+
+  outline: none;
+  border: 1px solid var(--main-text-color);
+  margin: 5px;
+}
+
+input[type=button], button, select {
+  cursor: pointer;
+}
+
+.normal-link{
+  color: var(--main-text-color);
+  text-decoration: none;
+
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.normal-link:hover{
+  text-decoration: underline;
+}
+
+.fancy{
+  border: 1px solid black;
+  width: 390px;
+  border-radius: 0px;
+
+  padding: 25px 25px;
+}
+
+@media (min-width: 1200px) {
+  .little-left-margin{
+    margin-left: 50px;
+  }
+
+}

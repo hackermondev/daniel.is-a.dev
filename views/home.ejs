@@ -6,6 +6,7 @@
 
     <meta name="theme-color" content="#50C878">
 
+    
     <meta name="title" content="<%= meta.Name %>">
     <meta name="description" content="<%= meta.Description %>">
     <meta name="author" content="HackermonDev">
@@ -14,6 +15,12 @@
     <meta name="og:description" content="<%= meta.Description %>">
     <meta name="og:icon" content="/static/images/hackermon.png">
     
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= meta.Name %>">
+    <meta name="twitter:description" content="<%= meta.Description %>">
+
+    <meta property="twitter:image" content="https://daniel.is-a.dev/static/images/hackermon.png"/>
+
     <meta property="og:image" content="/static/images/hackermon.png"/>
     <meta name="og:site_name" content="HackermonDev">
 
@@ -23,9 +30,11 @@
 
     <link href="/static/images/hackermon.png" rel="icon" type="image/png">
     
-    <link href="/static/style/index.css" rel="stylesheet" type="text/css" />
+    <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+
+    <link href="/static/style/home.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+  <body class="center">
     <!-- add some space to the top e-->
     <br>
 
@@ -37,7 +46,8 @@
         <a href="<%= links[link] %>"><%= link %></a>
       <% }) %>
     </div>
-    
+  
+
     <!-- Add lots of spaces -->
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -50,7 +60,17 @@
 
         <% projects.forEach(function(project){ %>
           <div class="project">
-            <a href="<%= project.url %>" rel="noopener" target="_blank"><%= project.name %></a>
+            <a href="<%= project.url %>" rel="noopener" target="_blank">
+              <%= project.name %>
+
+              <img
+                src="/static/images/languages/<%= project.language %>.svg"
+                alt="<%= project.language %>"
+
+                style="width: 20px; height: 20px; color: black;"
+                class="small-logo"
+              >
+            </a>
 
             <p class="description"><%= project.description %></p>
           </div>
@@ -61,6 +81,29 @@
 
 
 
+    <!-- Add lots of spaces -->
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="blogs">
+      <h1 class="section-title">Blogs:</h1>
+      <!-- <hr/> -->
+
+      <div id="blogs-list">
+
+        <% blogs.forEach(function(blog){ %>
+          <div class="blog">
+            <a href="/blog/<%= blog.slug %>" rel="noopener"><%= blog.title %></a>
+
+            <p class="description"><%= blog.teaser %></p>
+          </div>
+        <% }) %>
+
+        <%if (blogs.length == 0) { %>
+          <p>No blogs :(</p>
+        <% } %>
+      </div>
+    </div>
 
     <!-- Add lots of spaces -->
 
