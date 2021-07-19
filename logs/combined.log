@@ -2120,3 +2120,79 @@
 {"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
 {"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
 {"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"Starting app as (production) Sat Jul 10 2021 13:17:03 GMT+0000 (Coordinated Universal Time)"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"Starting app as (production) Mon Jul 12 2021 09:55:58 GMT+0000 (Coordinated Universal Time)"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13597.68.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.113 Safari/537.36) undefined"}
+{"level":"info","message":"GET /scripts/science.js (Mozilla/5.0 (X11; CrOS x86_64 13597.68.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.113 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (undefined) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET /blog/useful-tool-for-developers-2 (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET /scripts/science.js (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (undefined) undefined"}
+{"level":"info","message":"GET /robots.txt (Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)) undefined"}
+{"level":"info","message":"GET /blog/sitemap.xml (Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36) undefined"}
+{"level":"info","message":"GET /scripts/science.js (Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (undefined) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET /analytics (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET /robots.txt (Twitterbot/1.0) undefined"}
+{"level":"info","message":"GET / (Twitterbot/1.0) undefined"}
+{"level":"info","message":"Starting app as (production) Fri Jul 16 2021 18:16:21 GMT+0000 (Coordinated Universal Time)"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"Starting app as (production) Mon Jul 19 2021 05:40:15 GMT+0000 (Coordinated Universal Time)"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (undefined) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET /robots.txt (Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"HEAD / (python-requests/2.25.1) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"Starting app as (production) Mon Jul 19 2021 12:34:49 GMT+0000 (Coordinated Universal Time)"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}
+{"level":"info","message":"GET / (Mozilla/5.0 (X11; CrOS x86_64 13904.66.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36) undefined"}

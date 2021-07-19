@@ -28,5 +28,11 @@
     "description": "My first project as a data engineer?? A tool that allows you to track analytics for your repltalk posts with a simple image badge.",
     "url": "https://replanalytics.repl.co/",
     "language": "nodejs"
+  },
+  {
+    "name": "Discord SSH Client",
+    "description": "A discord bot that allows you to connect to SSH servers and run commands all from inside your Discord app!",
+    "url": "https://github.com/hackermondev/discord-ssh-client",
+    "language": "typescript"
   }
 ]
