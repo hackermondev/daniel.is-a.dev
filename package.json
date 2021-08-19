@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bash scripts/start.sh",
-    "dev": "node ."
+    "dev": "node .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,8 @@
     "sitemap": "^7.0.0",
     "teaser": "^0.1.1",
     "url-slug": "^3.0.2",
-    "winston": "^3.3.3"
-  }
+    "winston": "^3.3.3",
+    "snyk": "^1.658.0"
+  },
+  "snyk": true
 }
