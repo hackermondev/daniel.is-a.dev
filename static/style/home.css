@@ -1,8 +1,10 @@
-#projects, #blogs {
+#projects,
+#blogs {
   text-align: left;
 }
 
-#projects #projects-list, #blogs #blogs-list{
+#projects #projects-list,
+#blogs #blogs-list {
   margin: 0;
   padding: 0;
   /* text-align: center; */
@@ -10,7 +12,8 @@
   list-style-type: none;
 }
 
-#projects #projects-list .project a, #blogs #blogs-list .blog a{
+#projects #projects-list .project a,
+#blogs #blogs-list .blog a {
   text-decoration: none;
   color: var(--main-text-color);
 
@@ -18,10 +21,10 @@
   /* border: 1px solid white; */
   /* border-radius: 10px 10px; */
   /* padding: 5px 50px; */
-  
 }
 
-#projects #projects-list .project, #blogs #blogs-list .blog{
+#projects #projects-list .project,
+#blogs #blogs-list .blog {
   /* text-decoration: none;
   color: white; */
 
@@ -32,10 +35,10 @@
   cursor: pointer;
 
   overflow: auto;
-  
 }
 
-#projects #projects-list .project a:hover, #blogs #blogs-list .blog a:hover{
+#projects #projects-list .project a:hover,
+#blogs #blogs-list .blog a:hover {
   /* background-color: white; */
   /* color: black; */
 
@@ -45,17 +48,19 @@
 /* Desktop */
 
 @media (min-width: 1200px) {
-  #projects, #blogs {
+  #projects,
+  #blogs {
     margin-left: 50px;
 
     /* background-color: red; */
   }
-  
-  .little-left-margin{
+
+  .little-left-margin {
     margin-left: 50px;
   }
 
-  #projects #projects-list, #blogs #blog #blogs-list{
+  #projects #projects-list,
+  #blogs #blog #blogs-list {
     display: grid;
 
     grid-template-columns: 30% 30% 30%;
@@ -63,7 +68,8 @@
     grid-row-gap: 50px;
   }
 
-  #projects #projects-list .project,  #blogs #blogs-list .blog{
+  #projects #projects-list .project,
+  #blogs #blogs-list .blog {
     display: inline-block;
 
     width: 350px;
@@ -75,36 +81,42 @@
 /* Mobile */
 
 @media (max-width: 500px) {
-  #projects, #blogs {
+  #projects,
+  #blogs {
     text-align: center;
     /* background: blue; */
   }
-  
-  #projects #projects-list .project, #blogs #blogs-list .blog{
+
+  #projects #projects-list .project,
+  #blogs #blogs-list .blog {
     margin-top: 5px;
   }
 
-  #projects #projects-list .project a, #blogs #blogs-list .blog a{
+  #projects #projects-list .project a,
+  #blogs #blogs-list .blog a {
     display: block;
 
     font-size: 20px;
   }
 
-  #projects #projects-list .project a:hover, #blogs #blogs-list .blog a:hover{
+  #projects #projects-list .project a:hover,
+  #blogs #blogs-list .blog a:hover {
     color: black;
   }
 
-  #projects #projects-list .project:hover, #blogs #blogs-list .blog:hover{
+  #projects #projects-list .project:hover,
+  #blogs #blogs-list .blog:hover {
     background-color: var(--main-bg-color);
 
     color: black;
   }
 
-  #projects #projects-list .project .description, #blogs #blogs-list .blog .description{
+  #projects #projects-list .project .description,
+  #blogs #blogs-list .blog .description {
     display: none;
   }
 }
 
-.section-title{
+.section-title {
   text-decoration: underline;
 }

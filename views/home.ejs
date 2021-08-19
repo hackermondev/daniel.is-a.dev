@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-
-    <meta name="theme-color" content="#50C878">
-
-    
-    <meta name="title" content="<%= meta.Name %>">
-    <meta name="description" content="<%= meta.Description %>">
-    <meta name="author" content="HackermonDev">
-
-    <meta name="og:title" content="<%= meta.Name %>">
-    <meta name="og:description" content="<%= meta.Description %>">
-    <meta name="og:icon" content="/static/images/hackermon.png">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="<%= meta.Name %>">
-    <meta name="twitter:description" content="<%= meta.Description %>">
-
-    <meta property="twitter:image" content="https://daniel.is-a.dev/static/images/hackermon.png"/>
-
-    <meta property="og:image" content="/static/images/hackermon.png"/>
-    <meta name="og:site_name" content="HackermonDev">
-
-    <meta name="author" content="HackermonDev">
-
-    <title>HackermonDev - <%= meta.Name %></title>
-
-    <link href="/static/images/hackermon.png" rel="icon" type="image/png">
-    
-    <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+    <%- include('./components/head'); %>
 
     <link href="/static/style/home.css" rel="stylesheet" type="text/css" />
   </head>
@@ -61,7 +32,7 @@
         <% projects.forEach(function(project){ %>
           <div class="project">
             <a href="<%= project.url %>" rel="noopener" target="_blank">
-              <%= project.name %>
+              <%= project.name.toUpperCase() %>
 
               <img
                 src="/static/images/languages/<%= project.language %>.svg"
@@ -113,11 +84,7 @@
       <script src="/scripts/science.js"></script>
 
       <script>
-        window.tracker = ackeeTracker.create(`https://<%= analytics.AckeeHost %>`, {
-          ignoreLocalhost: true,
-          detailed: true,
-          ignoreOwnVisits: false
-        })
+        window.tracker = ackeeTracker.create(`https://<%= analytics.AckeeHost %>`, { ignoreLocalhost: true,detailed: true, ignoreOwnVisits: false })
 
         window.tracker.record('<%= analytics.AckeeID %>')
       </script>

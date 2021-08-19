@@ -1,55 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&family=Tomorrow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Georama&family=Tomorrow&display=swap");
 
-:root{
+:root {
   --main-bg-color: #2f3136;
   --main-text-color: white;
   --gray: gray;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
 
-.small{
+.small {
   color: var(--gray);
   font-size: 15px;
 }
 
-.small-logo{
+.small-logo {
   color: var(--main-bg-color);
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: Tomorrow, 'Times New Roman', Times, serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Tomorrow, "Times New Roman", Times, serif;
 }
 
-p, code, span, a{
-  font-family: 'Encode Sans SC', sans-serif;
+p,
+code,
+span,
+a {
+  font-family: "Georama", sans-serif;
 }
 
-.title{
+.title {
   font-size: 3em;
 }
 
 /* Mobile */
 
 @media (max-width: 500px) {
-  #links a{
+  #links a {
     display: block !important;
-    margin: 10px
+    margin: 10px;
   }
 }
 
-#links a, button, input[type=button]{
+#links a,
+button,
+input[type="button"] {
   color: var(--main-text-color);
 
   border: 1px solid var(--main-text-color);
@@ -57,12 +67,31 @@ p, code, span, a{
 
   text-decoration: none;
   padding: 5px 50px;
-  
+
   transition: 0.5s;
 }
 
-#links a:hover, button:hover, input[type=button]:hover{
+#links a:hover,
+button:hover,
+input[type="button"]:hover {
   background-color: var(--main-text-color);
   color: var(--main-bg-color);
   /* transform: scale(1.1); */
+}
+
+.dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -190px 0 0 -300px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-bg-color);
 }
