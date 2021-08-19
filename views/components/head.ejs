@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width">
+
+<meta name="theme-color" content="#50C878">
+
+<meta name="title" content="HackermonDev - <%= meta.Name %>">
+<meta name="description" content="<%= meta.Description %>">
+<meta name="author" content="HackermonDev">
+
+<meta property="og:type" content="article" />
+<meta name="og:title" content="<%= meta.Name %>">
+<meta name="og:description" content="<%= meta.Description %>">
+<meta name="og:icon" content="/static/images/hackermon.png">
+    
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= meta.Name %>">
+<meta name="twitter:description" content="<%= meta.Description %>">
+<meta property="twitter:image" content="https://daniel.is-a.dev/static/images/hackermon.png"/>
+<meta property="twitter:site" content="@hackermondev"/>
+<meta property="twitter:creator" content="@hackermondev"/>
+
+
+<meta property="og:image" content="/static/images/hackermon.png"/>
+<meta name="og:site_name" content="HackermonDev">
+
+<meta name="author" content="HackermonDev">
+
+<title>HackermonDev - <%= meta.Name %></title>
+
+<% if(meta.ShouldShowOnSearchEngine) { %>
+  <meta name=”robots” content="index, follow">
+<% } else { %>
+  <meta name="robots" content="noindex, nofollow">
+<% } %>
+
+<link rel="canonical" href="https://daniel.is-a.dev<%= meta.Page %>" />
+<link href="/static/images/hackermon.png" rel="icon" type="image/png">
+<link href="/static/style/global.css" rel="stylesheet" type="text/css" />
+
+<script async src="https://arc.io/widget.min.js#wK48TBKG"></script>
+<script src="/scripts/global.js"></script>

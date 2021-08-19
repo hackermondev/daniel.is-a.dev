@@ -1,6 +1,8 @@
 /* Blog Login */
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 10px 20px;
   color: var(--main-text-color);
   background-color: var(--main-bg-color);
@@ -10,11 +12,13 @@ input, select, textarea {
   margin: 5px;
 }
 
-input[type=button], button, select {
+input[type="button"],
+button,
+select {
   cursor: pointer;
 }
 
-.normal-link{
+.normal-link {
   color: var(--main-text-color);
   text-decoration: none;
 
@@ -22,11 +26,23 @@ input[type=button], button, select {
   cursor: pointer;
 }
 
-.normal-link:hover{
+.normal-link:hover {
   text-decoration: underline;
 }
 
-.fancy{
+#content a {
+  color: var(--main-text-color);
+  text-decoration: underline;
+
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#content a:hover {
+  text-decoration: underline;
+}
+
+.fancy {
   border: 1px solid black;
   width: 390px;
   border-radius: 0px;
@@ -35,8 +51,7 @@ input[type=button], button, select {
 }
 
 @media (min-width: 1200px) {
-  .little-left-margin{
+  .little-left-margin {
     margin-left: 50px;
   }
-
 }

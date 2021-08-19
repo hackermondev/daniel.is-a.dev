@@ -34,5 +34,11 @@
     "description": "A discord bot that allows you to connect to SSH servers and run commands all from inside your Discord app!",
     "url": "https://github.com/hackermondev/discord-ssh-client",
     "language": "typescript"
+  },
+  {
+    "name": "Discord Level Helper",
+    "description": "A chrome extension to help you level up on Discord servers using MEE6 easier!",
+    "url": "https://github.com/hackermondev/Discord-Level-Helper",
+    "language": "typescript"
   }
 ]

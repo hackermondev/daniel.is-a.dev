@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const blogSchema = new mongoose.Schema({
   // id of the blog
 
   id: Number,
-  
+
   // title of the blog
   title: String,
 
@@ -22,8 +22,8 @@ const blogSchema = new mongoose.Schema({
 
   // quick teaser of the blog (auto generated)
 
-  teaser: String, 
-  
+  teaser: String,
+
   // the date it was created
   date: { type: Date, default: Date.now },
 
@@ -36,15 +36,14 @@ const blogSchema = new mongoose.Schema({
   // whether or not it should be public
 
   public: Boolean,
-  
+
   // when it was published
-  publishedAt: String
+  publishedAt: String,
+});
 
-})
+blogSchema.methods.publish = function () {
+  this.publishedAt = new Date().toString();
+  this.hidden = false;
+};
 
-blogSchema.methods.publish = function (){
-  this.publishedAt = new Date().toString()
-  this.hidden = false
-}
-
-module.exports = mongoose.model('Blog', blogSchema);
+module.exports = mongoose.model("Blog", blogSchema);
