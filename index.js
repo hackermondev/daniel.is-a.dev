@@ -49,18 +49,20 @@ let app = express();
 
 // Security & Improvment Middleware
 
-app.use(expressMinifyHTML({
-  override: true,
-  exception_url: false,
-  htmlMinifier: {
-    removeComments: true,
-    collapseWhitespace: true,
-    collapseBooleanAttributes: true,
-    removeAttributeQuotes: true,
-    removeEmptyAttributes: true,
-    minifyJS: true
-  }
-}));
+app.use(
+  expressMinifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+      minifyJS: true,
+    },
+  })
+);
 
 app.use(compression());
 
@@ -82,11 +84,11 @@ app.use((req, res, next) => {
   var ip = req.signedCookies[`_IP_ADDRESS`];
 
   if (ip) {
-    if (ip.split('.').length < 1) {
-      res.clearCookie(`_IP_ADDRESS`)
+    if (ip.split(".").length < 1) {
+      res.clearCookie(`_IP_ADDRESS`);
 
-      res.status(500).send(`Internal server error. Please reload the page.`)
-      return
+      res.status(500).send(`Internal server error. Please reload the page.`);
+      return;
     }
 
     utils.addLog(`${req.method} ${req.path}`, ip, req.headers["user-agent"]);
@@ -98,7 +100,7 @@ app.use((req, res, next) => {
   logger.log(
     `info`,
     `${req.method} ${req.path} (${req.headers["user-agent"]}) ${
-    ip || "UNKNOWN IP"
+      ip || "UNKNOWN IP"
     }`
   );
 
@@ -111,7 +113,6 @@ app.set("view engine", "ejs");
 // Routes
 
 app.use("/blog", blogApi);
-
 
 app.get("/", async (req, res) => {
   // copy json
@@ -204,7 +205,11 @@ app.post("/e", (req, res) => {
     signed: true,
   });
 
-  utils.addLog(`${req.method} ${req.path}`, req.body["e_address"], req.headers["user-agent"]);
+  utils.addLog(
+    `${req.method} ${req.path}`,
+    req.body["e_address"],
+    req.headers["user-agent"]
+  );
 
   console.log(`GOT IP ${ip}.**.**.**`);
   res.end();
@@ -220,7 +225,7 @@ app.get("/logs", async (req, res) => {
   logs.reverse();
   res.render(`logs`, {
     meta: {
-      "ShouldShowOnSearchEngine": false
+      ShouldShowOnSearchEngine: false,
     },
     logs,
   });

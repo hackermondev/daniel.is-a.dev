@@ -104,8 +104,8 @@ router.post("/preview", (req, res) => {
     renderAnalytics: false,
     isPreviewMode: true,
     meta: {
-      'Page': '',
-      'ShouldShowOnSearchEngine': false
+      Page: "",
+      ShouldShowOnSearchEngine: false,
     },
   });
 });
@@ -202,8 +202,8 @@ router.get("/new", (req, res) => {
     data,
     isEditing: false,
     meta: {
-      'ShouldShowOnSearchEngine': false,
-      'Page': ''
+      ShouldShowOnSearchEngine: false,
+      Page: "",
     },
   });
 });
@@ -306,8 +306,8 @@ router.get("/edit/:slug", async (req, res) => {
     data,
     isEditing: true,
     meta: {
-      'ShouldShowOnSearchEngine': false,
-      'Page': ''
+      ShouldShowOnSearchEngine: false,
+      Page: "",
     },
   });
 });
@@ -405,10 +405,10 @@ router.get("/:slug", async (req, res) => {
     isPreviewMode: false,
     analytics,
     meta: {
-      'Name': blog.title,
-      'Description': blog.teaser,
-      'ShouldShowOnSearchEngine': true,
-      "Page": `/blog/${blog.slug}`
+      Name: blog.title,
+      Description: blog.teaser,
+      ShouldShowOnSearchEngine: true,
+      Page: `/blog/${blog.slug}`,
     },
   });
 });

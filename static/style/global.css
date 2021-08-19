@@ -86,13 +86,12 @@ input[type="button"]:hover {
   margin: -190px 0 0 -300px;
 }
 
-
 /* Track */
 ::-webkit-scrollbar-track {
-  background: black; 
+  background: black;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--main-bg-color); 
+  background: var(--main-bg-color);
 }

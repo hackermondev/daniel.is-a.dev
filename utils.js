@@ -8,8 +8,8 @@ async function addLog(route, ip, userAgent) {
     currentLogs = [];
   }
 
-  if(ip == process.env.MY_IP){
-    return
+  if (ip == process.env.MY_IP) {
+    return;
   }
 
   currentLogs.push({
@@ -28,8 +28,8 @@ async function getLogs() {
     currentLogs = [];
   }
 
-  if(currentLogs.length > 500){
-    currentLogs = currentLogs.slice(0, 500)
+  if (currentLogs.length > 500) {
+    currentLogs = currentLogs.slice(0, 500);
   }
 
   return currentLogs;
