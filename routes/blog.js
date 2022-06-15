@@ -74,7 +74,6 @@ router.get("/sitemap.xml", async (req, res) => {
 
 router.post("/preview", (req, res) => {
   // preview blog markdown
-
   var data = {
     title: req.body["blog_title"] || "Unknown",
     text_content: req.body["blog_data"] || "??? No content found",
@@ -150,7 +149,7 @@ router.post("/submit", async (req, res) => {
     text: data.data,
   });
 
-  data.teaser = jsteaser.summarize()[0];
+  // data.teaser = jsteaser.summarize(data["data"])[0];
 
   // save to monogodb
 
@@ -281,12 +280,9 @@ router.get("/edit/:slug", async (req, res) => {
     return res.redirect("/blog/login");
   }
 
-  var blogSlug = req.params.slug.split("-");
-  var blogID = blogSlug[blogSlug.length - 1];
-
-  // console.log(blogID)
+  var blogSlug = req.params.slug;
   var blogItems = await mongo.Blog.find({
-    id: blogID,
+    slug: blogSlug,
   });
 
   if (blogItems.length == 0) {
@@ -325,12 +321,9 @@ router.get("/delete/:slug", async (req, res) => {
     return res.redirect("/blog/login");
   }
 
-  var blogSlug = req.params.slug.split("-");
-  var blogID = blogSlug[blogSlug.length - 1];
-
-  // console.log(blogID)
+  var blogSlug = req.params.slug;
   var blogItems = await mongo.Blog.find({
-    id: blogID,
+    slug: blogSlug,
   });
 
   if (blogItems.length == 0) {
@@ -360,21 +353,20 @@ router.get("/:slug", async (req, res) => {
     });
   }
 
-  var blogSlug = req.params.slug.split("-");
-  var blogID = blogSlug[blogSlug.length - 1];
-
-  // console.log(blogID)
-
-  if (!blogID) {
-    return res.status(404).render("404");
-  }
-
+  var blogSlug = req.params.slug;
   var blogItems = await mongo.Blog.find({
-    id: blogID,
+    slug: blogSlug,
   });
 
   if (blogItems.length == 0) {
-    return res.status(404).render("404");
+    return res.status(404).render("404", {
+      meta: {
+        Name: "404",
+        Description: "404",
+        ShouldShowOnSearchEngine: false,
+        Page: `/404`,
+      },
+    });
   }
 
   var blog = blogItems[0];
@@ -421,17 +413,9 @@ router.get(`/:slug/increase_counter`, async (req, res) => {
     });
   }
 
-  var blogSlug = req.params.slug.split("-");
-  var blogID = blogSlug[blogSlug.length - 1];
-
-  // console.log(blogID)
-
-  if (!blogID) {
-    return res.status(404).render("404");
-  }
-
+  var blogSlug = req.params.slug;
   var blogItems = await mongo.Blog.find({
-    id: blogID,
+    slug: blogSlug,
   });
 
   if (blogItems.length == 0) {

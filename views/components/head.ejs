@@ -1,12 +1,10 @@
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width">
-
 <meta name="theme-color" content="#50C878">
 
-<meta name="title" content="HackermonDev - <%= meta.Name %>">
+<meta name="title" content="Hackermon - <%= meta.Name %>">
 <meta name="description" content="<%= meta.Description %>">
-<meta name="author" content="HackermonDev">
+<meta name="author" content="Hackermon">
 
 <meta property="og:type" content="article" />
 <meta name="og:title" content="<%= meta.Name %>">
@@ -22,11 +20,11 @@
 
 
 <meta property="og:image" content="/static/images/hackermon.png"/>
-<meta name="og:site_name" content="HackermonDev">
+<meta name="og:site_name" content="Hackermon">
 
-<meta name="author" content="HackermonDev">
+<meta name="author" content="Hackermon">
 
-<title>HackermonDev - <%= meta.Name %></title>
+<title>Hackermon</title>
 
 <% if(meta.ShouldShowOnSearchEngine) { %>
   <meta name=”robots” content="index, follow">
@@ -38,5 +36,13 @@
 <link href="/static/images/hackermon.png" rel="icon" type="image/png">
 <link href="/static/style/global.css" rel="stylesheet" type="text/css" />
 
-<script async src="https://arc.io/widget.min.js#wK48TBKG"></script>
+<!-- <script async src="https://arc.io/widget.min.js#wK48TBKG"></script> -->
 <script src="/scripts/global.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    // darkMode: 'class'
+  }
+</script>

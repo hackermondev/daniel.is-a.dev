@@ -1,5 +1,16 @@
 {
-  "Blogs": "#blogs",
-  "Projects": "#projects",
-  "Fiverr": "https://www.fiverr.com/hackermondev/create-a-professional-discord-bot"
+  "Blogs": {
+    "url": "#blogs",
+    "rounded": true
+  },
+
+  "Projects": {
+    "url": "#projects",
+    "rounded": false
+  },
+
+  "GitHub": {
+    "url": "https://github.com/hackermondev",
+    "rounded": true
+  }
 }

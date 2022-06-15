@@ -2,20 +2,38 @@
 <html lang="en">
   <head>
     <%- include('../components/head'); %>
-
-    <link href="/static/style/blog.css" rel="stylesheet" type="text/css" />
+		<style>
+			.utterances {
+				position: fixed;
+			}
+		</style>
   </head>
-  <body class="little-left-margin">
-    <br>
-    <a class="normal-link" href="<%= previousLink %>">← Back</a>
+	
+  <body class="ml-12 bg-white dark:bg-gray-800 dark:text-white overflow-auto">
+		<br><br>
 
-    <h1 class="title" style="margin-bottom: 0;"><%= blog.title %></h1>
-    <span class="small"><%= blog.createdAt %> (<%= blog.viewCount %> views)</span>
+		<h1 class="mb-6 text-5xl font-bold tracking-tight"><%= blog.title %></h1>
+		    <span class="text-gray"><%= blog.createdAt %> (<%= blog.viewCount %> views)</span>
 
+		<br><br>
     <div id="content">
       <%- blog.html_content %>
     </div>
 
+					<br><br><hr>
+
+			<div class="scroll">
+					<script src="https://utteranc.es/client.js"
+        repo="hackermondev/daniel.is-a.dev"
+        issue-term="pathname"
+        label="blog-comments"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+			</div>
+</script>
+
+			
     <%if (renderAnalytics == true) { %>
       <script src="/scripts/science.js"></script>
 

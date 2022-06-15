@@ -10,7 +10,7 @@ const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const minify = require("./middleware/minify");
 
-const utils = require("./utils");
+const fs = require("fs");
 
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
@@ -34,9 +34,11 @@ const logger = winston.createLogger({
       filename: path.join(__dirname, `logs/error.log`),
       level: "error",
     }),
+
     new winston.transports.File({
       filename: path.join(__dirname, `logs/combined.log`),
     }),
+
     new winston.transports.Console({
       format: winston.format.simple(),
     }),
@@ -44,8 +46,12 @@ const logger = winston.createLogger({
 });
 
 const blogApi = require("./routes/blog");
-
 let app = express();
+
+app.use((req, res, next) => {
+	logger.log('info', `${req.method} ${req.path}. ua: ${req.headers['user-agent']} ip: ${req.headers['x-forwarded-for']}`)
+	next()
+});
 
 // Security & Improvment Middleware
 
@@ -80,44 +86,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.use((req, res, next) => {
-  var ip = req.signedCookies[`_IP_ADDRESS`];
-
-  if (ip) {
-    if (ip.split(".").length < 1) {
-      res.clearCookie(`_IP_ADDRESS`);
-
-      res.status(500).send(`Internal server error. Please reload the page.`);
-      return;
-    }
-
-    utils.addLog(`${req.method} ${req.path}`, ip, req.headers["user-agent"]);
-
-    ip = `${ip.split(".")[0]}.**.**.**`;
-  }
-
-  // logging
-  logger.log(
-    `info`,
-    `${req.method} ${req.path} (${req.headers["user-agent"]}) ${
-      ip || "UNKNOWN IP"
-    }`
-  );
-
-  next();
-});
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Routes
-
 app.use("/blog", blogApi);
-
 app.get("/", async (req, res) => {
   // copy json
-  var metaForPage = JSON.parse(JSON.stringify(meta));
-
+  const metaForPage = JSON.parse(JSON.stringify(meta));
   metaForPage["meta"] = meta["meta"][req.path];
 
   if (
@@ -164,72 +140,26 @@ app.get("/", async (req, res) => {
   res.render(`home`, metaForPage);
 });
 
-app.get("/arc-sw.js", async (req, res) => {
-  var r = await fetch(`https://arc.io/arc-sw.js`);
+// app.get("/analytics", (req, res) => {
+//   res.redirect(`https://ackee-production-yukv.up.railway.app/`);
+// });
 
-  r = await r.text();
+// app.get("/scripts/science.js", async (req, res) => {
+//   try {
+//     var fetchRes = await fetch(
+//       `https://${meta.analytics.AckeeHost}/tracker.js`
+//     );
 
-  res.set(`content-type`, `application/javascript`);
-  res.end(r);
-});
+//     var text = await fetchRes.text();
 
-app.get("/analytics", (req, res) => {
-  res.redirect(`https://ackee-production-yukv.up.railway.app/`);
-});
+//     res.set(`content-type`, `text/javascript`);
+//     res.end(text);
+//   } catch (err) {
+//     logger.log(`error`, `Failed to load analytics ${err}`);
 
-app.get("/scripts/science.js", async (req, res) => {
-  try {
-    var fetchRes = await fetch(
-      `https://${meta.analytics.AckeeHost}/tracker.js`
-    );
-
-    var text = await fetchRes.text();
-
-    res.set(`content-type`, `text/javascript`);
-    res.end(text);
-  } catch (err) {
-    logger.log(`error`, `Failed to load analytics ${err}`);
-
-    res.end(`alert('failed to load analytics');`);
-  }
-});
-
-app.post("/e", (req, res) => {
-  if (!req.body["e_address"]) {
-    return res.status(400).end(``);
-  }
-
-  var ip = req.body["e_address"].split(".")[0];
-
-  res.cookie(`_IP_ADDRESS`, req.body["e_address"], {
-    signed: true,
-  });
-
-  utils.addLog(
-    `${req.method} ${req.path}`,
-    req.body["e_address"],
-    req.headers["user-agent"]
-  );
-
-  console.log(`GOT IP ${ip}.**.**.**`);
-  res.end();
-});
-
-app.get("/logs", async (req, res) => {
-  if (!req.signedCookies["sid"]) {
-    return res.redirect("/blog/login");
-  }
-
-  var logs = await utils.getLogs();
-
-  logs.reverse();
-  res.render(`logs`, {
-    meta: {
-      ShouldShowOnSearchEngine: false,
-    },
-    logs,
-  });
-});
+//     res.end(`alert('failed to load analytics');`);
+//   }
+// });
 
 app.get("*", (req, res) => {
   res.status(404).render(`404`, {

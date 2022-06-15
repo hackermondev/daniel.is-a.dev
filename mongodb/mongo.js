@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = mongoose.connection;
 
-const mongoURL = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:${process.env.MONGO_PORT}`;
+const mongoURL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/blogs?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
