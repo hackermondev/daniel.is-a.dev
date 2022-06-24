@@ -49,7 +49,14 @@ const blogApi = require("./routes/blog");
 let app = express();
 
 app.use((req, res, next) => {
-	logger.log('info', `${req.method} ${req.path}. ua: ${req.headers['user-agent']} ip: ${req.headers['x-forwarded-for']}`)
+	if(
+		(req.path.search('static') == -1) &&
+		(req.path.search('scripts') == -1) &&
+		(req.path.search('arc-sw.js') == -1)
+	) {
+		logger.log('info', `${req.method} ${req.path}. ua: ${req.headers['user-agent']} ip: ${req.headers['x-forwarded-for']}`)
+	}
+
 	next()
 });
 

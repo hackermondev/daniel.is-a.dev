@@ -1,27 +1,9 @@
 [
   {
-    "name": "daniel.is-a.dev",
-    "description": "My website on GitHub. It is written in nodejs and express. Uses HTML and CSS for the frontend and uses mongodb in the backend for the blogs.",
-    "url": "https://github.com/hackermondev/daniel.is-a.dev",
-    "language": "nodejs"
-  },
-  {
-    "name": "Giveaways Discord Bot",
-    "description": "Giveaway Drops is an advanced discord bot made for hosting giveaways on Discord, you can use many features including setting a custom requirement to enter the giveaway and more!",
-    "url": "https://github.com/hackermondev/GiveawayDrops",
-    "language": "nodejs"
-  },
-  {
     "name": "Free .is-a.dev domains",
     "description": "I don't own this but I am a maintainer for this repo. We allow developers to get a custom name.is-a.dev domain with their name on it.",
     "url": "https://github.com/is-a-dev/register",
     "language": "github"
-  },
-  {
-    "name": "Repl-Talk Analytics",
-    "description": "My first project as a data engineer?? A tool that allows you to track analytics for your repltalk posts with a simple image badge.",
-    "url": "https://replanalytics.repl.co/",
-    "language": "nodejs"
   },
   {
     "name": "Discord SSH Client",
